@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* base valiables */
+
+$font-primary: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+$font-hira: 'HiraKakuPro-W3', 'Hiragino Kaku Gothic Pro W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, '游ゴシック', YuGothic, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+
+$font-goth: 'Gotham', sans-serif;
+
+$font-html: 62.5%;
+$clr-white: #fff;
+$clr-black: #000000;
+$clr-purple-brown: #231f20;
+
+$screen-sp: 768px;
+
+$min_width: 320px;
+$max_width: 768px;
+
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+$res_320: 'only screen and (min-width: 320px) and (max-width: 374px)';
+$res_375: 'only screen and (min-width: 375px) and (max-width: 424px)';
+$res_425: 'only screen and (min-width: 425px) and (max-width: 767px)';
+$res_768: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$res_992: 'only screen and (min-width: 992px) and (max-width: 1023px)';
+$res_1024: 'only screen and (min-width: 1024px) and (max-width: 1999px)';
+$res_1200: 'only screen and (min-width: 1200px)';
+
+$min_769: 'screen and (min-width: 769px)';
+$max_768: 'screen and (max-width: 768px)';
+$res_991: 'screen and (max-width: 991px)';
+$min_992: 'screen and (min-width: 992px)';
