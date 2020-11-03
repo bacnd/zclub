@@ -6,6 +6,11 @@
 @import './helpers/commons';
 
 body {
+    max-width: 450px;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    position: relative;
     &.pc{
         background: url('../images/bg.jpg') no-repeat;
         background-size: cover;
@@ -18,7 +23,7 @@ body {
 
 header {
     .logo {
-        max-width: 635px;
+        max-width: 80%;
         width: 100%;
         display: block;
         @include mlrauto;
@@ -35,11 +40,12 @@ header {
 }
 
 #form {
-    margin-top: -132px;
+    margin-top: -75px;
     .slogan {
         img {
             @include mlrauto;
             display: block;
+            max-width: 55%;
         }
     }
     .panel {
@@ -49,11 +55,13 @@ header {
         padding-bottom: 50px;
         margin-top: 4px;
         .inputForm {
-            padding-top: 110px;
-            padding-bottom: 78px;
+            padding-top: 80px;
+            padding-bottom: 55px;
             max-width: 723px;
             width: 100%;
             @include mlrauto;
+            padding-right: 25px;
+            padding-left: 25px;
         }
         #registerForm {
             .inputForm {
@@ -65,7 +73,7 @@ header {
             .inputForm {
                 background: url('../images/panel-log.png') top center no-repeat;
                 background-size: 100% 100%;
-                padding-bottom: 132px;
+                padding-bottom: 90px;
             }
         }
         .tabs {
@@ -79,18 +87,24 @@ header {
             }
         }
     }
+    .girl {
+        position: absolute;
+        bottom: 0;
+        left: -264px;
+        max-width: 69%;
+    }
     #registerForm,
     #loginForm {
         .form-group {
             text-align: center;
             position: relative;
-            max-width: 594px;
+            // max-width: 594px;
             width: 100%;
             @include mlrauto;
             &:nth-of-type(2),
             &:nth-of-type(3) {
                 // padding-top: 10px;
-                margin-top: 30px;
+                margin-top: 20px;
                 // @media screen and (max-width: 720px) {
                 //     padding-top: vw(10px);
                 //     margin-top: vw(5px);
@@ -100,37 +114,40 @@ header {
                 justify-content: space-between;
                 align-items: center;
                 .code-img {
-                    margin-right: 30px;
+                    margin-right: 20px;
+                    width: 40%;
                 }
             }
             .form-control {
-                background-size: cover;
                 border: none;
                 color: #ffffff;
-                width: 594px;
-                height: 68px;
-                font-size: 24.5px;
+                width: 100%;
+                height: 45px;
+                font-size: 20px;
                 text-align: center;
-                padding-left: 100px;
-                padding-right: 100px;
-                @media screen and (max-width: 720px) {
-                    width: vw(571px);
-                    height: vw(100px);
-                    font-size: vw(26.5px);
-                    padding-bottom: vw(10px);
-                    padding-left: vw(100px);
-                    padding-right: vw(100px);
-                }
+                padding-left: 60px;
+                padding-right: 60px;
+                // @media screen and (max-width: 720px) {
+                //     width: vw(571px);
+                //     height: vw(100px);
+                //     font-size: vw(26.5px);
+                //     padding-bottom: vw(10px);
+                //     padding-left: vw(100px);
+                //     padding-right: vw(100px);
+                // }
                 &#username {
                     background: url('../images/input-user.png') center no-repeat;
+                    background-size: contain;
                 }
                 &#pwd, &#repeat-pwd {
                     background: url('../images/input-pass.png') center no-repeat;
+                    background-size: contain;
                 }
                 &#code {
-                    width: 262px;
-                    height: 83px;
+                    width: 42%;
+                    height: 65px;
                     background: url('../images/input-code.png') center no-repeat;
+                    background-size: contain;
                     margin-top: 10px;
                     padding-left: 20px;
                     padding-right: 20px;
@@ -144,8 +161,8 @@ header {
                 text-align: center;
             }
             .ic-eye {
-                right: 22px;
-                top: 24px;
+                right: 20px;
+                top: 12px;
                 cursor: pointer;
                 @media screen and (max-width: 720px) {
                     right: vw(55px);
@@ -153,7 +170,7 @@ header {
                     width: vw(39px);
                 }
                 &.eye-view {
-                    opacity: 1;
+                    top: 10px;
                 }
             }
             label.error {
@@ -168,8 +185,8 @@ header {
         .btnForm {
             @include mlrauto;
             justify-content: center;
-            margin-top: -70px;
-            max-width: 668px;
+            margin-top: -40px;
+            max-width: 85%;
             width: 100%;
             @media screen and (max-width: 720px) {
                 margin-top: vw(27px);
@@ -189,23 +206,24 @@ header {
     #loginForm {
         .form-group {
             & + .form-group {
-                margin-top: 43px;
+                margin-top: 20px;
             }
         }
     }
 }
 
 .dowload-app {
-    padding-top: 66vw;
-    padding-bottom: 27.77778vw;
+    padding-bottom: 17.77778vw;
     @media screen and (min-width: 769px) {
         display: none;
     }
-    img {
-        display: block;
-        @include mlrauto;
-        @media screen and (max-width: 360px) {
-            max-width: vw(254px);
+    .link-app {
+        img {
+            display: block;
+            @include mlrauto;
+            @media screen and (max-width: 360px) {
+                max-width: vw(254px);
+            }
         }
     }
 }

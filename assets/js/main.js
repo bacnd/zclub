@@ -2,7 +2,10 @@ $(function () {
     'use strict';
 
     $('.form-group > .pw').on('click', function () {
+        console.log($(this).find('img').attr('src'));
         $(this).hasClass('eye-view') ? ($(this).removeClass('eye-view'), $(this).parent().children('input').attr('type', 'password')) : ($(this).addClass('eye-view'), $(this).parent().children('input').attr('type', 'text'));
+        var src = ($(this).find('img').attr('src') === 'assets/images/eyes.png' ? 'assets/images/eyes-gach.png' : 'assets/images/eyes.png');
+        $(this).find('img').attr('src', src);
     });
 
     $('#registerForm').validate({
