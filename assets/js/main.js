@@ -105,7 +105,7 @@ $(function () {
         var user = $('#username').val();
         var password = $.md5($('#pwd').val());
         var capcha = $('#code').val();
-        var idCode = $('.code-img img').data('id');
+        var idCode = $('#idcapcha').val();
         console.log('http://portal.zclub.vin/api?c=1&un=' + user + '&pw=' + password + '&cp=' + capcha + '&cid=' + idCode + '&at=');
         $.ajax({
             type: 'GET',
@@ -238,7 +238,8 @@ function loadCapcha() {
         success: function (data) {
             var base64_string = data.img;
             var img = 'data:image/png;base64,' + base64_string;
-            $('.code-img img').attr('src', img).attr('data-id', data.id);
+            $('.code-img img').attr('src', img);
+            $('#idcapcha').val(data.id);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
