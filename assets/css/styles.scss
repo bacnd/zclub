@@ -6,22 +6,146 @@
 @import './helpers/commons';
 
 body {
-    max-width: 450px;
-    width: 100%;
     height: 100vh;
     margin: auto;
     position: relative;
-    &.pc{
-        background: url('../images/bg.jpg') no-repeat;
+    overflow: hidden;
+    &.pc {
+        // background: url('../images/bg.jpg') no-repeat;
         background-size: cover;
     }
     &.sp {
-        background: url('../images/bg-sp.jpg') no-repeat;
+        // background: url('../images/bg-sp.jpg') no-repeat;
         background-size: cover;
+    }
+    .section-background {
+        background-size: cover;
+        background-attachment: scroll;
+        background-origin: content-box;
+        background-image: url('../images/bg.png');
+        background-position: center top;
+        background-repeat: repeat;
+        filter: sepia(28%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: hidden;
+        @media screen and (max-width: 768px) {
+            background-size: cover;
+            background-attachment: scroll;
+            background-origin: content-box;
+            background-image: url('../images/bg.png');
+            background-position: center top;
+            background-repeat: repeat;
+            filter: sepia(28%);
+        }
+    }
+    .overlay {
+        background: #00dbde;
+        background: -webkit-linear-gradient(180deg, #00dbde, #fc00ff);
+        background: linear-gradient(180deg, #00dbde, #fc00ff);
+        mix-blend-mode: multiply;
+        will-change: transform, opacity;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        // @media screen and (max-width: 768px) {
+        //     display: none;
+        // }
+    }
+    #wrapper {
+        .container {
+            max-width: 960px;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+            .light {
+                position: absolute;
+                // @media screen and (max-width: 768px) {
+                //     display: none;
+                // }
+                .image {
+                    opacity: 0.7;
+                    .image-background {
+                        background-repeat: no-repeat;
+                        background-position: left top;
+                        background-size: cover;
+                        background-attachment: scroll;
+                        background-origin: content-box;
+                        position: absolute;
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                    }
+                }
+                &#light-left {
+                    width: 481.469px;
+                    height: 393.429px;
+                    top: 15.8475px;
+                    left: -60.193px;
+                    @media screen and (max-width: 768px) {
+                        width: 304.91px;
+                        height: 249.155px;
+                        top: -2.3419px;
+                        left: -28.2321px;
+                    }
+                    .image-background {
+                        width: 481.469px;
+                        height: 393.429px;
+                        top: 0px;
+                        left: 0px;
+                        background-image: url('../images/light-left.png');
+                        @media screen and (max-width: 768px) {
+                            width: 304.91px;
+                            height: 249.155px;
+                        }
+                    }
+                }
+                &#light-right {
+                    width: 481.469px;
+                    height: 393.429px;
+                    top: 15.8475px;
+                    right: -60.193px;
+                    @media screen and (max-width: 768px) {
+                        width: 256.651px;
+                        height: 236.503px;
+                        top: -2.3419px;
+                        right: -28px;
+                    }
+                    .image-background {
+                        width: 440.535px;
+                        height: 368.401px;
+                        top: 0px;
+                        right: 0px;
+                        background-image: url('../images/light-right.png');
+                        @media screen and (max-width: 768px) {
+                            width: 282.811px;
+                            height: 236.503px;
+                        }
+                    }
+                }
+            }
+            header,
+            #form {
+                max-width: 450px;
+                width: 100%;
+                @include mlrauto;
+            }
+        }
     }
 }
 
 header {
+    position: relative;
+    z-index: 2;
     .logo {
         max-width: 80%;
         width: 100%;
@@ -42,6 +166,8 @@ header {
 #form {
     margin-top: -75px;
     .slogan {
+        position: relative;
+        z-index: 2;
         img {
             @include mlrauto;
             display: block;
@@ -139,7 +265,8 @@ header {
                     background: url('../images/input-user.png') center no-repeat;
                     background-size: contain;
                 }
-                &#pwd, &#repeat-pwd {
+                &#pwd,
+                &#repeat-pwd {
                     background: url('../images/input-pass.png') center no-repeat;
                     background-size: contain;
                 }
@@ -214,6 +341,7 @@ header {
 
 .dowload-app {
     padding-bottom: 17.77778vw;
+    text-align: center;
     @media screen and (min-width: 769px) {
         display: none;
     }

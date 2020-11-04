@@ -366,21 +366,167 @@ output:-moz-ui-invalid {
 }
 
 body {
-  max-width: 450px;
-  width: 100%;
   height: 100vh;
   margin: auto;
   position: relative;
+  overflow: hidden;
 }
 
 body.pc {
-  background: url("../images/bg.jpg") no-repeat;
   background-size: cover;
 }
 
 body.sp {
-  background: url("../images/bg-sp.jpg") no-repeat;
   background-size: cover;
+}
+
+body .section-background {
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: content-box;
+  background-image: url("../images/bg.png");
+  background-position: center top;
+  background-repeat: repeat;
+  -webkit-filter: sepia(28%);
+          filter: sepia(28%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  body .section-background {
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: content-box;
+    background-image: url("../images/bg.png");
+    background-position: center top;
+    background-repeat: repeat;
+    -webkit-filter: sepia(28%);
+            filter: sepia(28%);
+  }
+}
+
+body .overlay {
+  background: #00dbde;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00dbde), to(#fc00ff));
+  background: linear-gradient(180deg, #00dbde, #fc00ff);
+  mix-blend-mode: multiply;
+  will-change: transform, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+body #wrapper .container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+body #wrapper .container .light {
+  position: absolute;
+}
+
+body #wrapper .container .light .image {
+  opacity: 0.7;
+}
+
+body #wrapper .container .light .image .image-background {
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: content-box;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+body #wrapper .container .light#light-left {
+  width: 481.469px;
+  height: 393.429px;
+  top: 15.8475px;
+  left: -60.193px;
+}
+
+@media screen and (max-width: 768px) {
+  body #wrapper .container .light#light-left {
+    width: 304.91px;
+    height: 249.155px;
+    top: -2.3419px;
+    left: -28.2321px;
+  }
+}
+
+body #wrapper .container .light#light-left .image-background {
+  width: 481.469px;
+  height: 393.429px;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/light-left.png");
+}
+
+@media screen and (max-width: 768px) {
+  body #wrapper .container .light#light-left .image-background {
+    width: 304.91px;
+    height: 249.155px;
+  }
+}
+
+body #wrapper .container .light#light-right {
+  width: 481.469px;
+  height: 393.429px;
+  top: 15.8475px;
+  right: -60.193px;
+}
+
+@media screen and (max-width: 768px) {
+  body #wrapper .container .light#light-right {
+    width: 256.651px;
+    height: 236.503px;
+    top: -2.3419px;
+    right: -28px;
+  }
+}
+
+body #wrapper .container .light#light-right .image-background {
+  width: 440.535px;
+  height: 368.401px;
+  top: 0px;
+  right: 0px;
+  background-image: url("../images/light-right.png");
+}
+
+@media screen and (max-width: 768px) {
+  body #wrapper .container .light#light-right .image-background {
+    width: 282.811px;
+    height: 236.503px;
+  }
+}
+
+body #wrapper .container header,
+body #wrapper .container #form {
+  max-width: 450px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  position: relative;
+  z-index: 2;
 }
 
 header .logo {
@@ -408,6 +554,11 @@ header .logo img {
 
 #form {
   margin-top: -75px;
+}
+
+#form .slogan {
+  position: relative;
+  z-index: 2;
 }
 
 #form .slogan img {
@@ -621,6 +772,7 @@ header .logo img {
 
 .dowload-app {
   padding-bottom: 17.77778vw;
+  text-align: center;
 }
 
 @media screen and (min-width: 769px) {

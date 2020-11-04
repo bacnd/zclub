@@ -1,108 +1,110 @@
 <!DOCTYPE html>
 <html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>ZCLUB</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>ZCLUB</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png" /> -->
 
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png" /> -->
+        <meta name="theme-color" content="#cfc1ac" />
+        <meta name="msapplication-navbutton-color" content="#cfc1ac" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#cfc1ac" />
 
-    <meta name="theme-color" content="#cfc1ac" />
-    <meta name="msapplication-navbutton-color" content="#cfc1ac" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#cfc1ac" />
+        <!-- To run web application in full-screen -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- To run web application in full-screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- CSS -->
+        <link href="./assets/css/styles.css" rel="stylesheet" />
+    </head>
 
-    <!-- CSS -->
-    <link href="./assets/css/styles.css" rel="stylesheet" />
-</head>
-
-<body class="pc">
-    <div id="wrapper">
-        <header>
-            <a href="index.html" class="logo txt-center">
-                <img class="img-responsive" src="assets/images/logo.png" alt="logo" />
-            </a>
-        </header>
-        <section id="form">
-            <figure class="slogan"><img src="assets/images/slogan.png" alt="slogan"></figure>
-            <div class="panel">
-                <ul class="tabs dl-flex">
-                    <li class="tab-item register active" data-tab="register"><img src="assets/images/reg-active.png" alt="register">
-                    </li>
-                    <li class="tab-item login" data-tab="login"><img src="assets/images/log.png" alt="login"></li>
-                </ul>
-                <form class="regForm" role="form" name="registerForm" action="" id="registerForm" method="POST"
-                    novalidate="novalidate">
-                    <div class="inputForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="" autocomplete="off" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="pwd" name="password"
-                                placeholder="" />
-                            <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="repeat-pwd" name="repeat_pwd"
-                                placeholder="" />
-                            <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
-                        </div>
-                        <div class="form-group form-code dl-flex">
-                            <input type="text" class="form-control" id="code" name="code"
-                                placeholder="" />
-                            <div class="code-img"><img src="assets/images/capcha.png" alt="capcha"></div>
-                        </div>
+    <body class="pc">
+        <div id="wrapper">
+            <div class="section-background"></div>
+            <div class="overlay"></div>
+            <div class="container">
+                <div id="light-left" class="light">
+                    <div class="image"><div class="image-background"></div></div>
+                </div>
+                <div id="light-right" class="light">
+                    <div class="image"><div class="image-background"></div></div>
+                </div>
+                <header>
+                    <a href="index.html" class="logo txt-center">
+                        <img class="img-responsive" src="assets/images/logo.png" alt="logo" />
+                    </a>
+                </header>
+                <section id="form">
+                    <figure class="slogan"><img src="assets/images/slogan.png" alt="slogan" /></figure>
+                    <div class="panel">
+                        <ul class="tabs dl-flex">
+                            <li class="tab-item register active" data-tab="register"><img src="assets/images/reg-active.png" alt="register" /></li>
+                            <li class="tab-item login" data-tab="login"><img src="assets/images/log.png" alt="login" /></li>
+                        </ul>
+                        <form class="regForm" role="form" name="registerForm" action="" id="registerForm" method="POST" novalidate="novalidate">
+                            <div class="inputForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="pwd" name="password" placeholder="" />
+                                    <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="repeat-pwd" name="repeat_pwd" placeholder="" />
+                                    <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
+                                </div>
+                                <div class="form-group form-code dl-flex">
+                                    <input type="text" class="form-control" id="code" name="code" placeholder="" />
+                                    <div class="code-img"><img src="assets/images/capcha.png" alt="capcha" /></div>
+                                </div>
+                            </div>
+                            <div class="btnForm dl-flex">
+                                <button class="btnsubmit" type="submit">
+                                    <img src="assets/images/btn-dangky.png" alt="Đăng ký" width="100%" />
+                                </button>
+                                <a href="#"><img src="assets/images/btn-facebook.png" alt="facebook" width="100%" /></a>
+                            </div>
+                        </form>
+                        <form class="logForm" role="form" name="loginForm" action="" id="loginForm" method="POST" novalidate="novalidate" style="display: none">
+                            <div class="inputForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="pwd" name="password" placeholder="" />
+                                    <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
+                                </div>
+                            </div>
+                            <div class="btnForm dl-flex">
+                                <button class="btnsubmit" type="submit">
+                                    <img src="assets/images/btn-login.png" alt="Đăng ký" width="100%" />
+                                </button>
+                                <a href="#"><img src="assets/images/btn-facebook.png" alt="facebook" width="100%" /></a>
+                            </div>
+                        </form>
                     </div>
-                    <div class="btnForm dl-flex">
-                        <button class="btnsubmit" type="submit">
-                            <img src="assets/images/btn-dangky.png" alt="Đăng ký" width="100%" />
-                        </button>
-                        <a href="#"><img src="assets/images/btn-facebook.png" alt="facebook" width="100%" /></a>
+                </section>
+                <section class="dowload-app">
+                    <figure class="game"><img src="assets/images/game.png" alt="game" /></figure>
+                    <div class="link-app">
+                        <figure class="ios">
+                            <a href="https://apps.apple.com/us/app/zvin-balloons-jungle/id1528522562"><img src="assets/images/ios.png" alt="ios" /></a>
+                        </figure>
+                        <figure class="android" style="display: none">
+                            <a href="#"><img src="assets/images/android.png" alt="android" /></a>
+                        </figure>
                     </div>
-                </form>
-                <form class="logForm" role="form" name="loginForm" action="" id="loginForm" method="POST"
-                    novalidate="novalidate" style="display:  none;">
-                    <div class="inputForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="" autocomplete="off" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="pwd" name="password"
-                                placeholder="" />
-                            <span class="ic-eye pw"><img src="assets/images/eyes.png" alt="eyes" /></span>
-                        </div>
-                    </div>
-                    <div class="btnForm dl-flex">
-                        <button class="btnsubmit" type="submit">
-                            <img src="assets/images/btn-login.png" alt="Đăng ký" width="100%" />
-                        </button>
-                        <a href="#"><img src="assets/images/btn-facebook.png" alt="facebook" width="100%" /></a>
-                    </div>
-                </form>
+                </section>
             </div>
-            <figure class="girl"><img src="assets/images/girl.png" alt="girl"></figure>
-        </section>
-        <section class="dowload-app">
-            <figure class="game"><img src="assets/images/game.png" alt="game"></figure>
-            <div class="link-app">
-                <figure class="ios"><a href="#"><img src="assets/images/ios.png" alt="ios"></a></figure>
-                <figure class="android" style="display: none;"><a href="#"><img src="assets/images/android.png" alt="android"></a></figure>
-            </div>
-        </section>
-    </div>
-    <!-- JS -->
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-
+        </div>
+        <!-- JS -->
+        <script src="./assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
