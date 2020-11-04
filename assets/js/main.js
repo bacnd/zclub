@@ -93,6 +93,7 @@ $(function () {
 
     loadCapcha(),
         $('.btn-reload').click(function () {
+            $('#code').val('');
             loadCapcha();
         });
 
@@ -103,22 +104,73 @@ $(function () {
         }
         var user = $('#username').val();
         var password = $.md5($('#pwd').val());
+        var capcha = $('#code').val();
         var idCode = $('.code-img img').data('id');
-        console.log('http://portal.zclub.vin/api?c=1&un=' + user + '&pw=' + password + '&cp=xaf9&cid=' + idCode + '&at=');
+        console.log('http://portal.zclub.vin/api?c=1&un=' + user + '&pw=' + password + '&cp=' + capcha + '&cid=' + idCode + '&at=');
         $.ajax({
             type: 'GET',
-            url: 'http://portal.zclub.vin/api?c=1&un=' + user + '&pw=' + password + '&cp=xaf9&cid=' + idCode + '&at=',
+            url: 'http://portal.zclub.vin/api?c=1&un=' + user + '&pw=' + password + '&cp=' + capcha + '&cid=' + idCode + '&at=',
             dataType: 'json',
             contentType: false,
             processData: false,
             cache: false,
             success: function (data) {
                 console.log(data);
+                if (data.success) {
+                    $('.form-group input').val('');
+                    alert('Bạn đã đăng ký thành công!');
+                    window.location.href = 'http://zclub.vin/';
+                } else {
+                    $('#code').val('');
+                    loadCapcha();
+                    switch (data.errorCode) {
+                        case '1001':
+                            alert("Hệ thống bận.");
+                            break;
+                        case '1114':
+                            alert("Hệ thống bảo trì.");
+                            break;
+                        case '115':
+                            alert("Mã Captcha sai.");
+                            break;
+                        case '101':
+                            alert("Tên đăng nhập không đúng định dạng.");
+                            break;
+                        case '1109':
+                            alert("Khóa login.");
+                            break;
+                        case '1005':
+                            alert("User không đúng.");
+                            break;
+                        case '1006':
+                            alert("Tên đăng nhập đã tồn tại.");
+                            break;
+                        case '1007':
+                            alert("Password sai.");
+                            break;
+                        case '2001':
+                            alert("Yêu cầu nhập nickname.");
+                            break;
+                        case '1012':
+                            alert("Đăng nhập bằng OTP.");
+                            break;
+                        default:
+                            alert("Lỗi xảy ra trong quá trình xử lý hệ thống.");
+                    }
+                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
             },
         });
+    });
+
+    $('#loginForm').on('submit', function (e) {
+        e.preventDefault();
+        if (!$('#loginForm').valid()) {
+            return false;
+        }
+        window.location.href = 'http://zclub.vin/';
     });
 
     $('.tabs .tab-item').click(function () {
