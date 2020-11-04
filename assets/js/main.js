@@ -23,10 +23,10 @@ $(function () {
                 minlength: 6,
                 equalTo: '#pwd',
             },
-            // code: {
-            //     required: true,
-            //     maxlength: 4,
-            // },
+            code: {
+                required: true,
+                maxlength: 4,
+            },
         },
         messages: {
             username: {
@@ -42,12 +42,19 @@ $(function () {
                 minlength: 'Mật khẩu phải dài ít nhất 6 ký tự',
                 equalTo: 'Nhập lại mật khẩu không đúng',
             },
-            // code: {
-            //     required: 'Vui lòng nhập capcha',
-            //     maxlength: 'Mã capcha dài không quá 4 ký tự',
-            // },
+            code: {
+                required: 'Vui lòng nhập capcha',
+                maxlength: 'Mã capcha dài không quá 4 ký tự',
+            },
         },
-        // errorElement: 'span',
+        errorElement: 'label',
+        errorPlacement: function (error, element) {
+            if (element.attr('name') === 'code') {
+                error.insertAfter($(element).closest('.form-code'));
+            } else {
+                error.insertAfter($(element));
+            }
+        },
         submitHandler: function (form) {
             // form.submit();
         },
@@ -70,14 +77,9 @@ $(function () {
                 required: 'Vui lòng nhập mật khẩu',
             },
         },
-        // errorElement: 'span',
         submitHandler: function (form) {
             form.submit();
         },
-    });
-
-    $(window).load(function () {
-        // $('html, body').animate({ scrollTop: $(document).height() }, 1000);
     });
 
     $(window).on('load resize', function () {
@@ -88,23 +90,6 @@ $(function () {
             $('.android').hide();
             $('.ios').show();
         }
-
-        // var win = $(this);
-        // if (win.width() > 768) {
-        //     $('body').addClass('pc').removeClass('sp');
-        //     var src = $('.logo img').attr('src');
-        //     $('#form').show();
-        //     // if (src === 'assets/images/logo-sp.png') {
-        //     //     $('.logo img').attr('src', 'assets/images/logo.png');
-        //     // }
-        // } else {
-        //     $('body').addClass('sp').removeClass('pc');
-        //     $('#form').hide();
-        //     var src = $('.logo img').attr('src');
-        //     // if (src === 'assets/images/logo.png') {
-        //     //     $('.logo img').attr('src', 'assets/images/logo-sp.png');
-        //     // }
-        // }
     });
 
     loadCapcha(),
@@ -112,16 +97,11 @@ $(function () {
             loadCapcha();
         });
 
-    // $('#registerForm').submit(function (e) {
-    //     e.preventDefault();
-    //     alert($(this).serialize());
-    //     // var values = $(this).serialize()
-    //     // logic....
-    //     return false;
-    // });
-
-    $('#registerForm').submit(function (e) {
+    $('#registerForm').on('submit', function (e) {
         e.preventDefault();
+        if (!$('#registerForm').valid()) {
+            return false;
+        }
         var user = $('#username').val();
         var password = $.md5($('#pwd').val());
         var idCode = $('.code-img img').data('id');
@@ -139,7 +119,6 @@ $(function () {
                 console.log(textStatus, errorThrown);
             },
         });
-        return false;
     });
 
     $('.tabs .tab-item').click(function () {
