@@ -369,15 +369,7 @@ body {
   height: 100vh;
   margin: auto;
   position: relative;
-  overflow: hidden;
-}
-
-body.pc {
-  background-size: cover;
-}
-
-body.sp {
-  background-size: cover;
+  overflow-x: hidden;
 }
 
 body .section-background {
@@ -431,6 +423,19 @@ body #wrapper .container {
   margin: 0 auto;
   height: 100%;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  body #wrapper .container {
+    max-width: 420px;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  body #wrapper .container {
+    overflow: hidden;
+  }
 }
 
 body #wrapper .container .light {
@@ -529,6 +534,12 @@ header {
   z-index: 2;
 }
 
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+}
+
 header .logo {
   max-width: 80%;
   width: 100%;
@@ -554,6 +565,12 @@ header .logo img {
 
 #form {
   margin-top: -75px;
+}
+
+@media screen and (max-width: 768px) {
+  #form {
+    display: none;
+  }
 }
 
 #form .slogan {
@@ -642,12 +659,25 @@ header .logo img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
 }
 
-#form #registerForm .form-group.form-code .code-img,
-#form #loginForm .form-group.form-code .code-img {
-  margin-right: 20px;
+#form #registerForm .form-group.form-code .capcha,
+#form #loginForm .form-group.form-code .capcha {
   width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+#form #registerForm .form-group.form-code .btn-reload,
+#form #loginForm .form-group.form-code .btn-reload {
+  width: 59px;
+  cursor: pointer;
 }
 
 #form #registerForm .form-group .form-control,
@@ -678,10 +708,9 @@ header .logo img {
 #form #registerForm .form-group .form-control#code,
 #form #loginForm .form-group .form-control#code {
   width: 42%;
-  height: 65px;
+  height: 53px;
   background: url("../images/input-code.png") center no-repeat;
   background-size: contain;
-  margin-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -770,14 +799,172 @@ header .logo img {
   margin-top: 20px;
 }
 
-.dowload-app {
-  padding-bottom: 17.77778vw;
-  text-align: center;
-}
-
 @media screen and (min-width: 769px) {
   .dowload-app {
     display: none;
+  }
+}
+
+.dowload-app .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dowload-app .image-background {
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: content-box;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dowload-app .element {
+  position: absolute;
+}
+
+.dowload-app #logo {
+  width: 297.638px;
+  height: 265.21px;
+  top: -4.143px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #logo {
+    width: 71.56611vw;
+  }
+}
+
+.dowload-app #logo .image-background {
+  width: 297.638px;
+  height: 265.21px;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  margin: auto;
+  background-image: url("../images/logo-sp.png");
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #logo .image-background {
+    width: 71.56611vw;
+    background-size: contain;
+  }
+}
+
+.dowload-app #co-bai {
+  width: 282.213px;
+  height: 126.218px;
+  top: 32.8006px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #co-bai {
+    width: 61.72583vw;
+    top: 14.66683vw;
+  }
+}
+
+.dowload-app #co-bai .image-background {
+  width: 282.213px;
+  height: 126.218px;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/co-bai.png");
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #co-bai .image-background {
+    width: 61.72583vw;
+    background-size: contain;
+  }
+}
+
+.dowload-app #slogan-sp {
+  width: 287.141px;
+  height: 85.6738px;
+  top: 179.019px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #slogan-sp {
+    width: 68.65028vw;
+    top: 41.67194vw;
+  }
+}
+
+.dowload-app #slogan-sp .image-background {
+  width: 282.213px;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/slogan-sp.png");
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app #slogan-sp .image-background {
+    width: 68.65028vw;
+    background-size: contain;
+  }
+}
+
+.dowload-app #game {
+  width: 535.513px;
+  height: 409.132px;
+  top: 228.161px;
+  left: -52px;
+}
+
+.dowload-app #game .image .image-background {
+  width: 535.513px;
+  height: 409.132px;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/game.png");
+}
+
+@media screen and (max-width: 768px) {
+  .dowload-app #games {
+    position: absolute;
+    top: 208.161px;
+    left: -52px;
+    width: calc(100% + 102px);
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-width: 360px) {
+  .dowload-app #games {
+    top: 57.8225vw;
+  }
+}
+
+.dowload-app .link-app {
+  top: 506.61px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+
+@media screen and (max-width: 360px) {
+  .dowload-app .link-app {
+    top: 140.725vw;
   }
 }
 
@@ -791,5 +978,11 @@ header .logo img {
   .dowload-app .link-app img {
     max-width: 70.55556vw;
   }
+}
+
+.dowload-app .link-app .note {
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -9,15 +9,15 @@ body {
     height: 100vh;
     margin: auto;
     position: relative;
-    overflow: hidden;
-    &.pc {
-        // background: url('../images/bg.jpg') no-repeat;
-        background-size: cover;
-    }
-    &.sp {
-        // background: url('../images/bg-sp.jpg') no-repeat;
-        background-size: cover;
-    }
+    overflow-x: hidden;
+    // &.pc {
+    //     // background: url('../images/bg.jpg') no-repeat;
+    //     background-size: cover;
+    // }
+    // &.sp {
+    //     // background: url('../images/bg-sp.jpg') no-repeat;
+    //     background-size: cover;
+    // }
     .section-background {
         background-size: cover;
         background-attachment: scroll;
@@ -66,6 +66,13 @@ body {
             margin: 0 auto;
             height: 100%;
             position: relative;
+            @media screen and (max-width: 768px) {
+                max-width: 420px;
+                height: 100vh;
+            }
+            @media screen and (max-width: 420px) {
+                overflow: hidden;
+            }
             .light {
                 position: absolute;
                 // @media screen and (max-width: 768px) {
@@ -146,6 +153,9 @@ body {
 header {
     position: relative;
     z-index: 2;
+    @include max_768 {
+        display: none;
+    }
     .logo {
         max-width: 80%;
         width: 100%;
@@ -165,6 +175,9 @@ header {
 
 #form {
     margin-top: -75px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
     .slogan {
         position: relative;
         z-index: 2;
@@ -239,9 +252,16 @@ header {
             &.form-code {
                 justify-content: space-between;
                 align-items: center;
-                .code-img {
-                    margin-right: 20px;
+                margin-top: 10px;
+                .capcha {
                     width: 40%;
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+                }
+                .btn-reload {
+                    width: 59px;
+                    cursor: pointer;
                 }
             }
             .form-control {
@@ -272,10 +292,9 @@ header {
                 }
                 &#code {
                     width: 42%;
-                    height: 65px;
+                    height: 53px;
                     background: url('../images/input-code.png') center no-repeat;
                     background-size: contain;
-                    margin-top: 10px;
                     padding-left: 20px;
                     padding-right: 20px;
                 }
@@ -340,18 +359,149 @@ header {
 }
 
 .dowload-app {
-    padding-bottom: 17.77778vw;
-    text-align: center;
     @media screen and (min-width: 769px) {
         display: none;
     }
+    .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .image-background {
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: cover;
+        background-attachment: scroll;
+        background-origin: content-box;
+        position: absolute;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .element {
+        position: absolute;
+    }
+    #logo {
+        width: 297.638px;
+        height: 265.21px;
+        top: -4.143px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @media screen and (max-width: 360px) {
+            width: vw(257.638px);
+        }
+        .image-background {
+            width: 297.638px;
+            height: 265.21px;
+            top: 0px;
+            left: 0px;
+            right: 0;
+            margin: auto;
+            background-image: url('../images/logo-sp.png');
+            @media screen and (max-width: 360px) {
+                width: vw(257.638px);
+                background-size: contain;
+            }
+        }
+    }
+    #co-bai {
+        width: 282.213px;
+        height: 126.218px;
+        top: 32.8006px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @media screen and (max-width: 360px) {
+            width: vw(222.213px);
+            top: vw(52.8006px);
+        }
+        .image-background {
+            width: 282.213px;
+            height: 126.218px;
+            top: 0px;
+            left: 0px;
+            background-image: url('../images/co-bai.png');
+            @media screen and (max-width: 360px) {
+                width: vw(222.213px);
+                background-size: contain;
+            }
+        }
+    }
+    #slogan-sp {
+        width: 287.141px;
+        height: 85.6738px;
+        top: 179.019px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @media screen and (max-width: 360px) {
+            width: vw(247.141px);
+            top: vw(150.019px);
+        }
+        .image-background {
+            width: 282.213px;
+            top: 0px;
+            left: 0px;
+            background-image: url('../images/slogan-sp.png');
+            @media screen and (max-width: 360px) {
+                width: vw(247.141px);
+                background-size: contain;
+            }
+        }
+    }
+    #game {
+        width: 535.513px;
+        height: 409.132px;
+        top: 228.161px;
+        left: -52px;
+        .image {
+            .image-background {
+                width: 535.513px;
+                height: 409.132px;
+                top: 0px;
+                left: 0px;
+                background-image: url('../images/game.png');
+            }
+        }
+    }
+    #games {
+        @media screen and (max-width: 768px) {
+            position: absolute;
+            top: 208.161px;
+            left: -52px;
+            width: calc(100% + 102px);
+            overflow-x: hidden;
+            @media screen and (max-width: 360px) {
+                top: vw(208.161px);
+            }
+        }
+    }
     .link-app {
+        // width: 201.341px;
+        // height: 59.5207px;
+        top: 506.61px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        @media screen and (max-width: 360px) {
+            top: vw(506.61px);
+        }
         img {
             display: block;
             @include mlrauto;
             @media screen and (max-width: 360px) {
                 max-width: vw(254px);
             }
+        }
+        .note {
+            color: #ffffff;
+            font-size: 13px;
+            text-align: center;
         }
     }
 }

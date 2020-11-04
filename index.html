@@ -60,11 +60,14 @@
                                 </div>
                                 <div class="form-group form-code dl-flex">
                                     <input type="text" class="form-control" id="code" name="code" placeholder="" />
-                                    <div class="code-img"><img src="assets/images/capcha.png" alt="capcha" /></div>
+                                    <div class="capcha">
+                                        <div class="code-img"><img src="assets/images/capcha.png" alt="capcha" /></div>
+                                        <div class="btn-reload"><img src="assets/images/btn-reload.jpg" alt="reload" /></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="btnForm dl-flex">
-                                <button class="btnsubmit" type="submit">
+                                <button class="btnsubmit btn-register" type="submit">
                                     <img src="assets/images/btn-dangky.png" alt="Đăng ký" width="100%" />
                                 </button>
                                 <a href="#"><img src="assets/images/btn-facebook.png" alt="facebook" width="100%" /></a>
@@ -90,14 +93,26 @@
                     </div>
                 </section>
                 <section class="dowload-app">
-                    <figure class="game"><img src="assets/images/game.png" alt="game" /></figure>
-                    <div class="link-app">
+                    <div id="logo" class="element">
+                        <div class="image"><div class="image-background"></div></div>
+                    </div>
+                    <div id="co-bai" class="element">
+                        <div class="image"><div class="image-background"></div></div>
+                    </div>
+                    <div id="slogan-sp" class="element">
+                        <div class="image"><div class="image-background"></div></div>
+                    </div>
+                    <div id="games">
+                        <img src="assets/images/game.png" alt="game" />
+                    </div>
+                    <div class="link-app" class="element">
                         <figure class="ios">
                             <a href="https://apps.apple.com/us/app/zvin-balloons-jungle/id1528522562"><img src="assets/images/ios.png" alt="ios" /></a>
                         </figure>
                         <figure class="android" style="display: none">
                             <a href="#"><img src="assets/images/android.png" alt="android" /></a>
                         </figure>
+                        <p class="note">Bản cài đã đổi tên nhằm vượt qua sự kiểm duyệt</p>
                     </div>
                 </section>
             </div>
@@ -105,6 +120,7 @@
         <!-- JS -->
         <script src="./assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.md5.js"></script>
         <script src="assets/js/main.js"></script>
     </body>
 </html>
